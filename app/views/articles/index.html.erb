@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Article of the month</h1>
+
+  <% @articles.each do |article| %>
+    <h2> <%= article.title %></h2>
+    <p> <%= article.content %></p>
+    <p> <%= link_to 'edit', edit_article_path(article) %></p>
+    <p> <%= link_to 'delete', article_path(article),
+    method: :delete,
+    data: {confirm: "Are you sure?"} %></p>
+  <% end %>
+</div>
+
